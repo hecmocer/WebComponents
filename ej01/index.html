@@ -14,24 +14,31 @@ body{
 
 </style>
 <body>
+
     <div class="container">
         <div class="panel panel-success">
             <div class="panel-body">
+
+
                 <div id="host">
-                    <span class="food meat"> Cow </span>
-                    <span class="food fish"> Tuna </span>
-                    <span class="dessert fruit"> Orange </span>
-                    <span class="dessert food"> Carrotkei</span>
-                    <span class="food fruit"> Tomato </span>
+                    <div class="product">
+                        <span class="name">Gloves</span>
+                        <span class="price">15</span>
+                    </div>
+                    <div class="product">
+                        <span class="name">Potato</span>
+                        <span class="price">2</span>
+                    </div>
                 </div>
+
+
             </div>
         </div>
     </div>
 
     <script type="text" id="HTMLimport">
 
-    <div>Las comidas son: <content select='.food'></div>
-    <div>Los postres son: <content select='.dessert'></div>
+    <div>Los productos son: <content select='.product.name'></div>
 
     </script>
 
