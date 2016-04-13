@@ -22,12 +22,22 @@ body{
                 <template id="news">
                     <div class="header"></div>
                     <div class="body"></div>
+                    <img src="">
                 </template>
 
-                <div id="news-01"></div>
-                <br>
-                <div id="news-02"></div>
+                <wc-news id="news01">
+                    <wc-news-header>TITULO 01</wc-news-header>
+                    <wc-news-body>cuerpo uno</wc-news-body>
+                    <wc-news-img>http://placehold.it/350x150</wc-news-img>
+                </wc-news>
 
+                <br>
+
+                <wc-news id="news02">
+                    <wc-news-header>TITULO 02</wc-news-header>
+                    <wc-news-body>cuerpo dos</wc-news-body>
+                    <wc-news-img>http://placehold.it/550x100</wc-news-img>
+                </wc-news>
 
             </div>
         </div>
