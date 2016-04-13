@@ -3,20 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>ej01</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
-<body>
+<style>
+body{
+    margin: 40px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
 
-    <div id="host">
-        <span id="name">Héctor</span>
-        <span id="address">Calle falsa 123</span>
-        <span id="phone">916 666 666</span>
+
+</style>
+<body>
+    <div class="container">
+        <div class="panel panel-success">
+            <div class="panel-body">
+                <div id="host">
+                    <span class="food meat"> Cow </span>
+                    <span class="food fish"> Tuna </span>
+                    <span class="dessert fruit"> Orange </span>
+                    <span class="dessert food"> Carrotkei</span>
+                    <span class="food fruit"> Tomato </span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script type="text" id="HTMLimport">
 
-    <div>El nombre es: <content select='#name'></div>
-    <div>La dirección es: <content select='#address'></div>
-    <div>El teléfono es: <content select='#phone'></div>
+    <div>Las comidas son: <content select='.food'></div>
+    <div>Los postres son: <content select='.dessert'></div>
 
     </script>
 
