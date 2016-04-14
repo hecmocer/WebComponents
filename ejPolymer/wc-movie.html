@@ -1,11 +1,14 @@
-<link rel="import" href="http://www.polymer-project.org/1.0/components/polymer/polymer.html">
-
 <dom-module id="wc-movie">
 
 <template>
     <style>
         .componente{
-            padding: 20px;
+            margin: 20px;
+            margin-bottom: 100px;
+            background-color: floralwhite;
+        }
+        button{
+            margin-right: 10px;
         }
     </style>
 
@@ -15,6 +18,9 @@
         <div id="cine">Cine: {{theater}}</div>
         <div id="sesion">Sesión: {{sesion}}</div>
         <div id="codigo">Código: {{code}}</div>
+        <span><button value="{{code}}-15h">15:00</button></span>
+        <span><button value="{{code}}-19h">19:00</button></span>
+        <span><button value="{{code}}-22h">22:00</button></span>
     </div>
 
 </template>

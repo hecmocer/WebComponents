@@ -3,14 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Polymer</title>
+    <link rel="import" href="http://www.polymer-project.org/1.0/components/polymer/polymer.html">
     <link rel="import" href="wc-movie.html">
+    <link rel="import" href="wc-kiosk.html">
+    <link rel="import" href="wc-window.html">
     <script src="http://www.polymer-project.org/1.0/components/webcomponentsjs/webcomponents-lite.js"></script>
 </head>
 <body>
 
-    <wc-movie></wc-movie>
-    <wc-movie></wc-movie>
-    <wc-movie></wc-movie>
+<style>
+    .movies{
+        overflow-y: scroll;
+        height: 900px;
+        width: 500px;
+        border: solid black 2px;
+        border-radius: 25px;
+    }
+</style>
+
+    <wc-window kiosk="#k">
+
+        <div class="movies">
+
+            <wc-movie title="Star Wars" sesion="25"></wc-movie>
+            <wc-movie title="The Hateful Eight" sesion="10"></wc-movie>
+            <wc-movie title="The Revenant" sesion="3"></wc-movie>
+            <wc-movie title="Zootopía" sesion="12"></wc-movie>
+            <wc-movie title="Deadpool" sesion="24"></wc-movie>
+
+        </div>
+
+    </wc-window>
+
+    <wc-kiosk id="k"></wc-kiosk>
 
 </body>
 </html>
