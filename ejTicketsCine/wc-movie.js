@@ -28,6 +28,11 @@
 
         getCode : function(title, theater, sesion){
             return title + "-" + theater + "-" + sesion;
+        },
+
+        onSesionClick: function(e){
+            this.time = e.target.value;
+            this.fire("action", this);
         }
     });
 })();
