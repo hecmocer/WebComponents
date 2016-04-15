@@ -2,10 +2,8 @@
 
     Polymer ({
         is: 'wc-kiosk',
-        properties: {
-            movies: Object,
-            value: function(){ return {}; }
-        },
-        //addTicket()
+        addTicket: function(ticket){
+            this.querySelector('#kiosko').appendChild(ticket);
+        }
     });
 })();

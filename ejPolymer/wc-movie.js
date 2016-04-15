@@ -15,7 +15,7 @@
                 type: String,
                 value: "Kinepolis"
             },
-            sesion: {
+            room: {
                 type: String,
                 value: "default"
             },
@@ -24,19 +24,10 @@
                 readonly: true,
                 computed: 'getCode(title, theater, sesion)'
             },
-            ticket: {
-                type: String,
-                readonly: true,
-                computed: 'getTicket(title, theater, sesion, time)'
-            }
         },
 
         getCode : function(title, theater, sesion){
             return title + "-" + theater + "-" + sesion;
-        },
-
-        getTicket : function(title, theater, sesion, time){
-            return title + "-" + theater + "-" + sesion + "-" + time;
         }
     });
 })();
