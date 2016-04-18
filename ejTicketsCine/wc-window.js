@@ -3,7 +3,11 @@
     Polymer ({
         is: 'wc-window',
         properties: {
-            kiosk: Object
+            kiosk: Object,
+            movies: {
+                type: Array,
+                value: function(){ return []; }
+            }
         },
         ready: function(){
             this.listen (this, 'action', 'onAction');

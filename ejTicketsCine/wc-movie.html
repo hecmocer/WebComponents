@@ -7,6 +7,9 @@
             margin-bottom: 100px;
             background-color: floralwhite;
         }
+        .ancho_imagen{
+            width: 350px;
+        }
         button{
             margin-right: 10px;
         }
@@ -14,7 +17,8 @@
 
     <div class="componente">
         <div id="titulo">Titulo: {{title}}</div>
-        <img src="{{imageSrc}}" id="portada">
+        <img src="{{imageSrc}}" id="portada" class="ancho_imagen">
+        Ruta imagen: {{imageSrc}}
         <div id="cine">Cine: {{theater}}</div>
         <div id="sala">Sala: {{room}}</div>
         <span><button value="15h" on-click="onSesionClick">15:00</button></span>

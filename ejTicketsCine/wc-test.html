@@ -1,29 +1,10 @@
 <dom-module id="wc-test">
 
 <template>
-    <style>
-    .movies{
-        background-color: white;
-        overflow-y: scroll;
-        height: 900px;
-        width: 40%;
-        border: solid black 2px;
-        border-radius: 25px;
-    }
-    </style>
 
-    <wc-window kiosk="{{kiosk}}">
-
-        <div class="movies">
-
-            <wc-movie title="Star Wars" room="25"></wc-movie>
-            <wc-movie title="The Hateful Eight" room="10"></wc-movie>
-            <wc-movie title="The Revenant" room="3"></wc-movie>
-            <wc-movie title="Zootopía" room="12"></wc-movie>
-            <wc-movie title="Deadpool" room="24"></wc-movie>
-
-        </div>
-
+    <wc-cinema movies="{{movies}}">
+    </wc-cinema>
+    <wc-window movies="[[movies]]" kiosk="{{kiosk}}">
     </wc-window>
 
     <wc-kiosk id="k"></wc-kiosk>
