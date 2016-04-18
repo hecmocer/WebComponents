@@ -1,9 +1,11 @@
 <dom-module id="wc-window">
 
 <template>
+
     <style>
     .movies{
-        background-color: white;
+        background-image: url('http://3.bp.blogspot.com/-iHQvlffYfaQ/VNHKBofFSQI/AAAAAAAAAQc/nXKFjoqmrgA/s1600/film_reel_by_gamnamno-d6n4rrf.png');
+        background-color: aliceblue;
         overflow-y: scroll;
         height: 900px;
         width: 40%;
@@ -12,10 +14,10 @@
         border-bottom-left-radius: 25px;
     }
     </style>
+
     <div class="movies">
         <template is="dom-repeat" items="{{movies}}" as="movie">
-            <wc-movie title="{{movie.title}}" room="{{movie.room}}" imageSrc="{{movie.image}}"></wc-movie>
-            {{movie.image}}
+            <wc-movie title="{{movie.title}}" room="{{movie.room}}" image-src="{{movie.image}}"></wc-movie>
         </template>
     </div>
 </template>

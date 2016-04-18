@@ -1,8 +1,14 @@
 <dom-module id="wc-ticket">
 
 <template>
-    <div>
-        Cine: {{theater}}, Película: {{title}}, sala: {{room}}, hora: {{time}}
+    <style>
+    .ticket{
+        border: solid black 1px;
+        padding: 5px;
+    }
+    </style>
+    <div class="ticket">
+        Película <strong>{{title}}</strong>, en {{theater}} sala: {{room}}, hora: {{time}}
     </div>
 </template>
 

@@ -2,10 +2,12 @@
 
 <template>
 
-    <wc-cinema movies="{{movies}}">
-    </wc-cinema>
-    <wc-window movies="[[movies]]" kiosk="{{kiosk}}">
-    </wc-window>
+    <wc-selector data="{{movies}}" key="movies">
+        <wc-cinema movies="{{m1}}"></wc-cinema>
+        <wc-cinema movies="{{m2}}"></wc-cinema>
+    </wc-selector>
+
+    <wc-window movies="[[movies]]" kiosk="{{kiosk}}"></wc-window>
 
     <wc-kiosk id="k"></wc-kiosk>
 

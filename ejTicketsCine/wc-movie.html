@@ -4,11 +4,17 @@
     <style>
         .componente{
             margin: 20px;
-            margin-bottom: 100px;
+            margin-bottom: 75px;
             background-color: floralwhite;
+            border: solid black 1px;
+            border-radius: 25px;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-top: 15px;
+            padding-bottom: 15px;
         }
         .ancho_imagen{
-            width: 350px;
+            max-width: 350px;
         }
         button{
             margin-right: 10px;
@@ -16,9 +22,8 @@
     </style>
 
     <div class="componente">
-        <div id="titulo">Titulo: {{title}}</div>
+        <div id="titulo"><strong>{{title}}</strong></div>
         <img src="{{imageSrc}}" id="portada" class="ancho_imagen">
-        Ruta imagen: {{imageSrc}}
         <div id="cine">Cine: {{theater}}</div>
         <div id="sala">Sala: {{room}}</div>
         <span><button value="15h" on-click="onSesionClick">15:00</button></span>
