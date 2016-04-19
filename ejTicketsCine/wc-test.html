@@ -2,14 +2,21 @@
 
 <template>
 
-    <wc-selector data="{{movies}}" key="movies">
+    <style>
+        .dynamic {
+            --color: purple;
+            --fondo: ghostwhite;
+        }
+    </style>
+
+    <wc-selector data="{{movies}}">
         <wc-cinema movies="{{m1}}"></wc-cinema>
         <wc-cinema movies="{{m2}}"></wc-cinema>
     </wc-selector>
 
     <wc-window movies="[[movies]]" kiosk="{{kiosk}}"></wc-window>
 
-    <wc-kiosk id="k"></wc-kiosk>
+    <wc-kiosk id="k" class="dynamic"></wc-kiosk>
 
 </template>
 

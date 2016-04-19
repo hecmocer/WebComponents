@@ -1,0 +1,90 @@
+<!--<link rel="import" href="http://www.polymer-project.org/1.0/components/polymer/polymer.html">-->
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+
+<dom-module id="wc-film">
+
+<template>
+   
+    <style is="custom-style">
+        .film-header  { @apply(--paper-font-headline); }
+        .film-light   { color: var(--paper-grey-600); }
+        .film-reserve { color: var(--google-blue-500); }
+        iron-icon.star {
+            --iron-icon-width: 16px;
+            --iron-icon-height: 16px;
+            color: var(--paper-amber-500);
+        }
+        iron-icon.star:last-of-type { color: var(--paper-grey-500); }
+    </style>
+    
+    <paper-card image="{{image}}">
+        <div class="card-content">
+            <div class="film-header">{{title}}</div>
+            <div class="film-rating">
+                <template 
+                   is="dom-repeat" 
+                   items="{{stars}}">
+                    <iron-icon class="star" icon="star"></iron-icon>
+                </template>
+            </div>
+            <p>{{genre}}</p>
+            <p class="film-light">{{description}}</p>
+        </div>
+        <div class="card-actions">
+            <p>Sesiones</p>
+            <div class="horizontal justified">
+                <template 
+                   is="dom-repeat" 
+                   items="{{sessions}}"
+                   as="session">
+                    <paper-button on-tap="onSession">{{session}}</paper-button>
+                </template>
+            </div>
+        </div>
+    </paper-card>
+    
+</template>
+
+<script> 
+    Polymer ({
+        is : 'wc-film',
+        
+        properties : {
+            title : String,
+            genre : String,
+            rate  : {
+                type    : Number,
+                observer: 'whenRate'
+            },
+            image : String,
+            description : String,
+            sessions    : Array
+        },
+        
+        ready: function () {
+        },
+        
+        whenRate : function () {
+            this.stars = []
+            for (var idx = 0; idx < Math.max (5, this.rate); idx++)
+                this.push ('stars', 0);
+        },
+        
+        onSession: function (e) {
+            this.fire ('wc-film-selected', {
+                film : {
+                    title : this.title,
+                    genre : this.genre,
+                    rate  : this.rate,
+                    image : this.image,
+                    description : this.description,
+                },
+                session : e.target.textContent.trim ()
+            })
+        } 
+    });
+</script>
+ 
+</dom-module>

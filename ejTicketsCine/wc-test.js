@@ -21,7 +21,6 @@
             }
         },
         ready: function(){
-
             this.kiosk = this.$.k;
         }
     });

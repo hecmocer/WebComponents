@@ -1,0 +1,46 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="wc-film.html">
+
+<dom-module id="wc-films">
+
+<template>
+    <style>
+        .container {
+            padding: 20px;
+        }
+        .film {
+            margin: 10px;
+            float: left;
+        }
+    </style>
+    <div class="container">
+        <template
+           is="dom-repeat" 
+           items="{{films}}" 
+           as="film">
+               <wc-film class="film"
+                    title="{{film.title}}"
+                    genre="{{film.genre}}"
+                    rate="{{film.rate}}"
+                    image="{{film.image}}"
+                    description ="{{film.description}}"
+                    sessions="{{film.sessions}}">
+               </wc-film>
+        </template>
+    </div>
+</template>
+<script>
+    Polymer ({
+        is : 'wc-films',
+        
+        properties : {
+            films : {
+                type     : Array,
+                value    : function () { return []; }
+            }
+        }
+        
+    });
+ </script>
+ 
+</dom-module>

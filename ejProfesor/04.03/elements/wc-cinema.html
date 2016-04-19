@@ -1,0 +1,144 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+
+<dom-module id="wc-cinema">
+
+<template>
+    <iron-ajax id="ajax"
+        auto
+        url="/04.03/data/films.json"
+        handle-as="text"
+        on-response="load"
+        debounce-duration="300"></iron-ajax>
+</template>
+
+<script>
+    (function () {
+        var films;
+        var sessions;
+        
+        function createSessions (films) {
+            var sessions = {};
+            films
+                .forEach (function (film, idx) {
+                    sessions[film.title] = {
+                        theatre  : idx + 1,
+                        sessions : {}
+                    };
+                    film.sessions
+                        .forEach (function (session) {
+                            sessions[film.title].sessions[session] = {
+                                hour  : session,
+                                seats : createSeats ()
+                            };
+                        });
+                });
+            return sessions;
+        }
+
+        function createSeats () {
+            var seats = {
+                size : {
+                    rows : 20,
+                    cols : 15
+                },
+                state : []
+            };
+
+            for (var idx = 1; idx < seats.size.rows; idx++) {
+                var row = [];
+                for (var idy = 0; idy < seats.size.cols; idy++)
+                    row.push ( {
+                        row   : idx,
+                        col   : String.fromCharCode (65 + idy),
+                        state : false
+                    });
+                seats.state.push (row);
+            }
+            return seats;
+        }
+                       
+        Polymer ({
+            is : 'wc-cinema',
+            
+            properties : {
+                films : {
+                    type     : Array,
+                    value    : function () { return []; },
+                    notify   : true,
+                },
+                film : {
+                    type     : Object,
+                    value    : function () { return {}; }
+                },
+                session : {
+                    type     : String,
+                    value    : ''
+                },
+                seats   : {
+                    type     : Object,
+                    value    : function () { return {}; },
+                    notify   : true
+                },
+            },
+            
+            load : function (data) {
+                this.films = JSON.parse (data.detail.response);
+                this.sessions = createSessions (this.films);
+                sessions = this.sessions;
+                films = this.films;
+            },
+            
+            observers : [
+                'whenFilmAndSession(film, session)'
+            ],
+                    
+            whenFilmAndSession : function (film, session) {
+                if (film && film.title && film.title.length > 0 &&
+                    session && session.length > 0)
+                    this.seats = this
+                        .sessions[film.title]
+                        .sessions[session]
+                        .seats;
+            },
+                      
+            book : function (reserve) {
+                var title   = reserve.film.title;
+                var session = reserve.session;
+                var code    = reserve.code;
+                reserve
+                    .seats
+                    .forEach (function (seat) {
+                        var x = seat.row - 1;
+                        var y = seat.col.charCodeAt (0) - 65;
+                        this.sessions[title]
+                            .sessions[session]
+                            .seats.state[x][y]
+                            .state = true;
+                        this.sessions[title]
+                            .sessions[session]
+                            .seats.state[x][y]
+                            .code = code;
+                    }, this);
+                sessions = this.sessions;
+            },
+            
+            check : function (ticket) {
+                return true;
+                var title   = ticket.film.title;
+                var session = ticket.session;
+                var x = ticket.row - 1;
+                var y = ticket.col.charCodeAt (0) - 65;
+                var code = ticket.code;
+                return sessions[title]
+                    .sessions[session]
+                    .seats.state[x][y]
+                    .code === code;
+            }
+            
+        });
+        
+    })();
+ </script>
+ 
+</dom-module>

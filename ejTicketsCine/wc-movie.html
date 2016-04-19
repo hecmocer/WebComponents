@@ -2,34 +2,37 @@
 
 <template>
     <style>
-        .componente{
-            margin: 20px;
-            margin-bottom: 75px;
-            background-color: floralwhite;
-            border: solid black 1px;
-            border-radius: 25px;
-            padding-left: 5px;
-            padding-right: 5px;
-            padding-top: 15px;
-            padding-bottom: 15px;
-        }
-        .ancho_imagen{
-            max-width: 350px;
-        }
-        button{
-            margin-right: 10px;
-        }
+    .componente{
+        margin: 20px;
+        margin-bottom: 75px;
+        background-color: floralwhite;
+        border: solid black 1px;
+        border-radius: 25px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        width: 355px;
+    }
+    .ancho_imagen{
+        width: 350px;
+    }
+    button{
+        margin-right: 10px;
+    }
     </style>
 
-    <div class="componente">
-        <div id="titulo"><strong>{{title}}</strong></div>
-        <img src="{{imageSrc}}" id="portada" class="ancho_imagen">
-        <div id="cine">Cine: {{theater}}</div>
-        <div id="sala">Sala: {{room}}</div>
-        <span><button value="15h" on-click="onSesionClick">15:00</button></span>
-        <span><button value="19h" on-click="onSesionClick">19:00</button></span>
-        <span><button value="22h" on-click="onSesionClick">22:00</button></span>
-    </div>
+    <center>
+        <div class="componente">
+            <div id="titulo"><strong>{{title}}</strong></div>
+            <img src="{{imageSrc}}" id="portada" class="ancho_imagen">
+            <div id="cine">Cine: {{theater}}</div>
+            <div id="sala">Sala: {{room}}</div>
+            <span><button value="15h" on-click="onSesionClick">15:00</button></span>
+            <span><button value="19h" on-click="onSesionClick">19:00</button></span>
+            <span><button value="22h" on-click="onSesionClick">22:00</button></span>
+        </div>
+    </center>
 
 </template>
 

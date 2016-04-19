@@ -15,6 +15,10 @@
                 type: String,
                 value: "0"
             },
+            img: {
+                type: String,
+                value: "http://placehold.it/50x50"
+            },
             time: {
                 type: String,
                 value: "0"

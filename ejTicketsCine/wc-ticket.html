@@ -3,12 +3,16 @@
 <template>
     <style>
     .ticket{
-        border: solid black 1px;
+        border-bottom: solid black 1px;
         padding: 5px;
+        margin: 5px;
+    }
+    .img-width{
+        width: 50px;
     }
     </style>
     <div class="ticket">
-        Película <strong>{{title}}</strong>, en {{theater}} sala: {{room}}, hora: {{time}}
+        <img src="{{img}}" class="img-width"> Película <strong>{{title}}</strong>, en <i>{{theater}}</i> <strong>({{room}})</strong> <strong>{{time}}</strong>
     </div>
 </template>
 

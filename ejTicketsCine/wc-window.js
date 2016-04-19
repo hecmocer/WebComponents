@@ -20,6 +20,7 @@
             ticket.theater = detail.theater;
             ticket.room = detail.room;
             ticket.time = detail.time;
+            ticket.img = detail.imageSrc;
 
             this.kiosk.addTicket(ticket);
         }

@@ -18,9 +18,9 @@
 
             var self = this;
 
-            self.data = Polymer.dom(self).children[0].movies;
-            console.log(self.data);
-            console.log(Polymer.dom(self).children[0]);
+            this.async(function(){
+                self.data = Polymer.dom(self).children[0].movies;
+            }, 500)
 
             self.querySelector('#botonCambiar').addEventListener('click', function(e){
 

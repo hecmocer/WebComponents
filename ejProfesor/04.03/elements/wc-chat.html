@@ -1,0 +1,60 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+
+
+<dom-module id="wc-chat">
+
+<template>
+    <style is="custom-style">
+        #chat {
+            height  : 600px;
+            width   : 95%;
+            margin  : 0 auto;
+            padding : 20px;
+            border  : solid 1px #ccc
+            shadow-box
+        }
+        #msg {
+            background-color : aliceblue;
+        }
+        .container {
+            margin  : 0 auto;
+            padding : 60px;
+        }
+    </style>
+
+        <paper-material
+             id="chat" 
+             elevation="3"></paper-material>
+             
+        <style is="custom-style">
+            .flex-horizontal {
+                @apply(--layout-horizontal);
+            }
+            .flexfull {
+                @apply(--layout-flex);
+            }
+        </style>
+
+        <div class="container flex-horizontal">
+            <div class="flexfull">
+                <paper-input id="char" label="Escribe algo bonito"></paper-input>
+            </div>
+            <div><paper-button>Enviar</paper-button></div>
+        </div>
+    
+    
+      
+</template>
+
+<script>
+    Polymer ({
+        is : 'wc-chat',
+                
+    });
+ </script>
+ 
+</dom-module>

@@ -1,0 +1,122 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="../bower_components/google-youtube/google-youtube.html">
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="wc-cinema.html">
+
+
+<dom-module id="wc-theatre">
+
+<template>
+      
+    <wc-cinema id="cinema"
+       films="{{films}}">
+    </wc-cinema>
+       
+    <paper-toolbar>
+        <div class="title">Kynepolis Online - Sala</div>
+    </paper-toolbar>
+       
+    <style is="custom-style">
+        .flex-center-justified {
+            @apply(--layout-horizontal);
+            @apply(--layout-center-justified);
+        }
+        .flexfull {
+            @apply(--layout-flex);
+        }
+    </style>
+
+    <paper-dialog id="dialog">
+        <h2>Bienvenido a la Proyección</h2>
+        <p>Seleccione su bucata y su código de entrada</p>
+        <paper-dropdown-menu label="Pelicula" id="film" on-iron-select="onFilm">
+            <paper-listbox class="dropdown-content">
+            <template 
+               is="dom-repeat"
+               items="{{films}}"
+               as="film">
+                <paper-item value="{{index}}">{{film.title}}</paper-item>
+            </template>
+            </paper-listbox>
+        </paper-dropdown-menu>
+        <paper-dropdown-menu label="Sesión" id="session">
+            <paper-listbox class="dropdown-content">
+            <template 
+               is="dom-repeat"
+               items="{{sessions}}"
+               as="session">
+                <paper-item>{{session}}</paper-item>
+            </template>
+            </paper-listbox>
+        </paper-dropdown-menu>
+        <paper-input label="Fila"    type="number" value="{{row::change}}"></paper-input>
+        <paper-input label="Columna" type="text"   value="{{col::change}}"></paper-input>
+        <paper-input label="Codigo"  type="number" value="{{code::change}}"></paper-input>
+        <div class="buttons">
+            <paper-button dialog-confirm on-tap="onCode">Aceptar</paper-button>
+        </div>
+    </paper-dialog>
+    
+    <div class="container flex-center-justified">
+        <h1>Proyección</h1>
+    </div>
+    <div class="container flex-center-justified">
+        <google-youtube id="player"
+            height="1000px"
+            width="2300px"
+            rel="0"
+            start="5">
+        </google-youtube>
+    </div>
+      
+</template>
+
+<script>
+    Polymer ({
+        is : 'wc-theatre',
+        
+        properties : {
+            films    : Array,
+            film     : Object,
+            sessions : Array,
+            title    : String,
+            row      : Number,
+            col      : String,
+            code     : Number
+        },
+        
+        ready: function () {
+            this.$.dialog.open ();
+            this.$.dialog.modal = true;
+        },
+        
+        onFilm : function (e, ctx) {
+            this.film = this.films [ctx.item.value];
+            this.sessions = this.film.sessions
+        },
+        
+        onCode : function () {
+
+            if (this.$.cinema.check({
+                film    : this.film,
+                session : this.$.session.value,
+                row     : this.row,
+                col     : this.col,
+                code    : this.code
+            })) {
+                this.$.dialog.close ();
+                this.$.player.videoId = this.film.ref;
+                this.$.player.play();
+            } else {
+                 this.$.dialog.open ();
+                 this.$.player.stop ();
+            }
+        }
+    });
+ </script>
+ 
+</dom-module>

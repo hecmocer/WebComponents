@@ -1,0 +1,106 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+
+<link rel="import" href="wc-cinema.html">
+<link rel="import" href="wc-films.html">
+<link rel="import" href="wc-seats.html">
+
+<dom-module id="wc-window">
+
+<template>
+       
+    <paper-toolbar>
+        <div class="title">Kynepolis Online - Taquilla</div>
+    </paper-toolbar>
+    
+    <wc-cinema id="cinema"
+       films="{{films}}"
+       film="{{film}}"
+       session="[[session]]"
+       seats="{{seats}}">
+    </wc-cinema>
+       
+    <style is="custom-style">
+        .flex-center-justified {
+            @apply(--layout-horizontal);
+            @apply(--layout-center-justified);
+        }
+        .code {
+            text-align: center;
+        }
+    </style>
+
+    
+    <div class="container flex-center-justified">
+        <h1>Cartelera</h1>
+    </div>
+    <div class="container flex-center-justified">
+        <wc-films 
+            films="{{films}}"
+            session="{{session}}"></wc-films>
+    </div>
+    <div class="container flex-center-justified">
+        <h1>Teatro</h1>
+    </div>
+    <div class="container flex-center-justified">
+        <wc-seats 
+            seats="{{seats}}"
+            selection="{{selection}}"></wc-seats> 
+    </div>
+    
+    <paper-dialog id="dialog">
+            <h2>Gracias por Su Selección</h2>
+            <p>Su código de recogida es el seguiente</p>
+            <h3 class="code">{{code}}</h3>
+            <div class="buttons">
+                <paper-button dialog-confirm>Aceptar</paper-button>
+            </div>
+    </paper-dialog>
+        
+    
+</template>
+
+<script>
+    Polymer ({
+        is : 'wc-window',
+        
+        properties : {
+            session : String,
+            film    : Object,
+            code    : Number
+        },
+                
+        listeners : {
+            'wc-film-selected'  : 'onSession',
+            'wc-seats-selected' : 'onSeats'
+        },
+        
+        ready : function () {
+            this.$.dialog.close ();
+        },
+        
+        genCode : function () {
+            return Date.now () % 10000;
+        },
+                
+        onSession : function (e, ctx) {
+            this.film    = ctx.film;
+            this.session = ctx.session;
+        },
+        
+        onSeats : function (e, ctx) {
+            this.code = this.genCode ();
+            this.$.cinema.book ({
+                film    : this.film,
+                session : this.session,
+                seats   : ctx,
+                code    : this.code
+            });
+            this.$.dialog.open ();
+        }
+        
+    });
+ </script>
+ 
+</dom-module>

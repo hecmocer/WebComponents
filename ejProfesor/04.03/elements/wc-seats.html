@@ -1,0 +1,120 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+
+<dom-module id="wc-seats">
+
+<template>
+    <style>
+        .container {
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .seat[disabled] {
+            background-color: #F8E0E0;
+            color:#ff0000;
+        }
+        .seat.selected {
+            background-color: #A9F5BC;
+            color:#21610B;
+        }
+        .seat {
+            background-color: #fff;
+        }
+        .done {
+            margin : 20px;
+        }
+    </style>
+    <div class="container">
+        <table>
+        <template
+           is="dom-repeat" 
+           items="{{seats.state}}" 
+           as="row">
+              <tr>
+              <template
+                   is="dom-repeat" 
+                   items="{{row}}" 
+                   as="seat">
+                   <td>
+                   <paper-button 
+                       class="seat" 
+                       toggles 
+                       raised
+                       row="{{seat.row}}"
+                       col="{{seat.col}}"
+                       on-tap="onSelect"
+                       disabled$="{{seat.state}}">
+                          {{seat.row}}{{seat.col}}
+                    </paper-button>
+                    </td>
+              </template>
+              </tr>
+        </template>
+        </table>
+
+        <template is="dom-if" if="{{selected}}">
+            <paper-button 
+               class="done" 
+               raised
+               on-tap="onDone">Hecho
+            </paper-button>
+        </template>
+    </div>
+</template>
+<script>
+    Polymer ({
+        is : 'wc-seats',
+        
+        properties : {
+            seats : {
+                type  : Array,
+                value : function () { return []; }
+            },
+            selection : {
+                type   : Array,
+                value  : function () { return []; },
+                notify : true
+            },
+            selected : {
+                type   : Boolean,
+                value  : false
+            }
+        },
+
+        onSelect : function (e) {
+            e.target.classList.toggle ('selected');
+            this.selected = Polymer
+                .dom (this.root)
+                .querySelectorAll ('.seat')
+                .filter (function (seat) {
+                    return seat.classList.contains ('selected');
+                })
+                .length > 0;
+        },
+        
+        onDone : function (e) {
+            var selected = Polymer
+                .dom (this.root)
+                .querySelectorAll ('.seat')
+                .filter (function (seat) {
+                    return seat.classList.contains ('selected');
+                })
+                .map (function (seat) {
+                    return {
+                        row : seat.row,
+                        col : seat.col
+                    };
+                });
+            this.fire ('wc-seats-selected', selected);
+            this.selected = selected;
+            var state = this.seats.state;
+            this.set ('seats.state', []);
+            this.async (function () {
+                this.set ('seats.state', state);
+            }.bind (this), 25);
+        }
+    });
+ </script>
+ 
+</dom-module>

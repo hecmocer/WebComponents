@@ -1,8 +1,36 @@
 <dom-module id="wc-selector">
 
 <template>
+    <style>
+    .button {
+      display: inline-block;
+      padding: 10px 25px;
+      font-size: 20px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+      color: #fff;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 15px;
+      box-shadow: -2px 8px 10px #999;
+      margin-left: 12%;
+      margin-top: 15px;
+      margin-bottom: 15px;
+  }
 
-        <button style="margin-left: 15%; margin-top:15px" id="botonCambiar" value="A">Cambiar taquilla</button>
+  .button:hover {background-color: #3e8e41;
+  }
+
+  .button:active {
+      background-color: #3e8e41;
+      box-shadow: 0 5px #666;
+      transform: translate(-2px, 3px);
+  }
+  </style>
+
+  <button id="botonCambiar" value="A" class="button">Cambiar taquilla</button>
 
 </template>
 
