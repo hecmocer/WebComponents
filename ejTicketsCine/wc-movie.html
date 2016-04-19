@@ -17,8 +17,9 @@
     .ancho_imagen{
         width: 350px;
     }
-    button{
+    paper-button{
         margin-right: 10px;
+        background-color: lightgrey;
     }
     </style>
 
@@ -28,9 +29,9 @@
             <img src="{{imageSrc}}" id="portada" class="ancho_imagen">
             <div id="cine">Cine: {{theater}}</div>
             <div id="sala">Sala: {{room}}</div>
-            <span><button value="15h" on-click="onSesionClick">15:00</button></span>
-            <span><button value="19h" on-click="onSesionClick">19:00</button></span>
-            <span><button value="22h" on-click="onSesionClick">22:00</button></span>
+            <span><paper-button value="15h" on-click="onSesionClick">15:00</button></span>
+            <span><paper-button value="19h" on-click="onSesionClick">19:00</button></span>
+            <span><paper-button value="22h" on-click="onSesionClick">22:00</button></span>
         </div>
     </center>
 
