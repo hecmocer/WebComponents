@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Nemo",
+        "image": "http://placehold.it/150x150",
+        "raza": "1",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 50
+    },
+    {
+        "name": "Dory",
+        "image": "http://placehold.it/150x150",
+        "raza": "2",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 50
+    },
+    {
+        "name": "Marlin",
+        "image": "http://placehold.it/150x150",
+        "raza": "3",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 50
+    },
+    {
+        "name": "Burbujas",
+        "image": "http://placehold.it/150x150",
+        "raza": "4",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 50
+    }
+]

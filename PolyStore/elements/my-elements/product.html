@@ -1,0 +1,67 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+
+<dom-module id="my-product">
+    <template>
+        <style include="shared-styles">
+            :host {
+                display: block;
+            }
+            .max-width{
+                max-width: 150px;
+            }
+        </style>
+
+    <paper-card heading="{{name}}" image="{{image}}" class="max-width">
+        <div class="card-content">
+            <div>Raza: {{raza}}</div>
+            <div>Color: {{color}}</div>
+            <div>Observaciones: {{notes}}</div>
+        </div>
+        <div class="card-actions">
+            <span>{{price}}€ </span>
+            <iron-icon icon="shopping-cart"></iron-icon>
+        </div>
+    </paper-card>
+
+    </template>
+
+    <script>
+        (function() {
+            'use strict';
+
+            Polymer({
+                is: 'my-product',
+
+                properties: {
+                    name: {
+                        type: String,
+                        value: "Unknown"
+                    },
+                    image: {
+                        type: String,
+                        value: ""
+                    },
+                    raza: {
+                        type: String,
+                        value: "None"
+                    },
+                    color: {
+                        type: String,
+                        value: "None"
+                    },
+                    notes: {
+                        type: String,
+                        value: "None"
+                    },
+                    price: {
+                        type: Number,
+                        value: -1
+                    }
+                }
+            });
+        })();
+    </script>
+
+</dom-module>

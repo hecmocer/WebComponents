@@ -1,0 +1,138 @@
+[
+    {
+        "name": "T-Rex",
+        "image": "http://placehold.it/150x150",
+        "raza": "1",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 50
+    },
+    {
+        "name": "Raptor",
+        "image": "http://placehold.it/150x150",
+        "raza": "2",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 50
+    },
+    {
+        "name": "Gallimimus",
+        "image": "http://placehold.it/150x150",
+        "raza": "3",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 50
+    },
+    {
+        "name": "Indomi",
+        "image": "http://placehold.it/150x150",
+        "raza": "4",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 49
+    },
+    {
+        "name": "Blue",
+        "image": "http://placehold.it/150x150",
+        "raza": "5",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 50
+    },
+    {
+        "name": "Raptor",
+        "image": "http://placehold.it/150x150",
+        "raza": "2",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 50
+    },
+    {
+        "name": "Gallimimus",
+        "image": "http://placehold.it/150x150",
+        "raza": "3",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 50
+    },
+    {
+        "name": "Indomi",
+        "image": "http://placehold.it/150x150",
+        "raza": "4",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 49
+    },
+    {
+        "name": "Blue",
+        "image": "http://placehold.it/150x150",
+        "raza": "5",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 50
+    },
+    {
+        "name": "Raptor",
+        "image": "http://placehold.it/150x150",
+        "raza": "2",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 50
+    },
+    {
+        "name": "Gallimimus",
+        "image": "http://placehold.it/150x150",
+        "raza": "3",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 50
+    },
+    {
+        "name": "Indomi",
+        "image": "http://placehold.it/150x150",
+        "raza": "4",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 49
+    },
+    {
+        "name": "Blue",
+        "image": "http://placehold.it/150x150",
+        "raza": "5",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 50
+    },
+    {
+        "name": "Raptor",
+        "image": "http://placehold.it/150x150",
+        "raza": "2",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 50
+    },
+    {
+        "name": "Gallimimus",
+        "image": "http://placehold.it/150x150",
+        "raza": "3",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 50
+    },
+    {
+        "name": "Indomi",
+        "image": "http://placehold.it/150x150",
+        "raza": "4",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 49
+    },
+    {
+        "name": "Blue",
+        "image": "http://placehold.it/150x150",
+        "raza": "5",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 50
+    }
+]

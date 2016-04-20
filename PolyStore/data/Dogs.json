@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Alberto",
+        "image": "http://placehold.it/150x150",
+        "raza": "1",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 50
+    },
+    {
+        "name": "Roberto",
+        "image": "http://placehold.it/150x150",
+        "raza": "2",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 50
+    },
+    {
+        "name": "Peperto",
+        "image": "http://placehold.it/150x150",
+        "raza": "3",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 50
+    },
+    {
+        "name": "Bolt",
+        "image": "http://placehold.it/150x150",
+        "raza": "4",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 50
+    }
+]

@@ -1,0 +1,52 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+
+<dom-module id="my-subcategory">
+    <template>
+        <style include="shared-styles">
+            :host {
+                display: block;
+            }
+        </style>
+
+        <iron-ajax
+            auto
+            url="../../data/{{key}}.json"
+            handle-as="json"
+            on-response="handleResponse"
+            debounce-duration="300"></iron-ajax>
+
+        <h1 class="page-title" tabindex="-1">{{key}}</h1>
+
+        <my-carousel items="{{products}}" id="mycarousel"></my-carousel>
+
+    </template>
+
+    <script>
+        (function() {
+            'use strict';
+
+            Polymer({
+                is: 'my-subcategory',
+                properties: {
+                    key: {
+                        type: String,
+                        value: "default"
+                    },
+                    products: {
+                        type: Array,
+                        value: function() { return []; }
+                    }
+                },
+                handleResponse: function(data){
+                    this.products = data.detail.response;
+
+                    this.customStyle['--widthdeproductos'] = this.products.length * 154 + "px";
+                    this.updateStyles();
+                }
+            });
+        })();
+    </script>
+
+</dom-module>

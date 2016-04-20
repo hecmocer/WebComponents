@@ -1,0 +1,47 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+<link rel="import" href="./product.html">
+
+<dom-module id="my-carousel">
+    <template>
+        <style include="shared-styles">
+            :host {
+                display: block;
+                max-width: 100%;
+                overflow-x: scroll;
+            }
+            .product-container{
+                width: var(--widthdeproductos);
+                padding: 5px;
+            }
+            .inline-block{
+                display: inline;
+            }
+        </style>
+
+            <div class="product-container">
+                <template is="dom-repeat" items="{{items}}" as="product">
+                    <my-product name="{{product.name}}" image="{{product.image}}" raza="{{product.raza}}"
+                    color="{{product.color}}" notes="{{product.notes}}" price="{{product.price}}" class="inline-block"></my-product>
+                </template>
+            </div>
+
+    </template>
+
+    <script>
+        (function() {
+            'use strict';
+
+            Polymer({
+                is: 'my-carousel',
+                properties: {
+                    items: {
+                        type: Array,
+                        value: function() { return []; }
+                    }
+                }
+            });
+        })();
+    </script>
+
+</dom-module>
