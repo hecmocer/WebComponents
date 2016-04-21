@@ -37,6 +37,10 @@
                     products: {
                         type: Array,
                         value: function() { return []; }
+                    },
+                    carrito: {
+                        type: Object,
+                        value: function(){ return {}; }
                     }
                 },
                 handleResponse: function(data){
@@ -44,6 +48,22 @@
 
                     this.customStyle['--widthdeproductos'] = this.products.length * 154 + "px";
                     this.updateStyles();
+                },
+                ready: function(){
+                    this.listen (this, 'addedToCart', 'onAdded');
+                },
+                onAdded: function(e, detail){
+                    var shoppingItem = new ShoppingItem();
+
+                    shoppingItem.name = detail.name;
+                    shoppingItem.image = detail.image;
+                    shoppingItem.raza = detail.raza;
+                    shoppingItem.color = detail.color;
+                    shoppingItem.notes = detail.notes;
+                    shoppingItem.price = detail.price;
+                    shoppingItem.amount = detail.amount;
+
+                    this.carrito.addShoppingItem(shoppingItem);
                 }
             });
         })();

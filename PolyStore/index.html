@@ -59,6 +59,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <style is="custom-style" include="shared-styles"></style>
 
   <link rel="import" href="bower_components/iron-icons/hardware-icons.html">
+  <link rel="import" href="bower_components/neon-animation/animations/scale-up-animation.html">
+  <link rel="import" href="bower_components/neon-animation/animations/fade-out-animation.html">
+  <link rel="import" href="bower_components/paper-dialog/paper-dialog.html">
 </head>
 
 <body unresolved>
@@ -121,12 +124,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <span class="space"></span>
 
           <!-- Toolbar icons -->
-          <paper-icon-button icon="refresh"></paper-icon-button>
-          <paper-icon-button icon="search"></paper-icon-button>
+          <paper-icon-button icon="shop" onclick="javascript:document.querySelector('#storeDialog').toggle()"></paper-icon-button>
+          <paper-icon-button icon="account-circle"></paper-icon-button>
+          <span>Saldo: {{money}}€</span>
+
+          <!-- Store cart -->
+          <paper-dialog entry-animation="scale-up-animation"
+              exit-animation="fade-out-animation"
+              id="storeDialog"
+              style="width: 75%">
+          <my-shopping saldo="{{money}}"></my-shopping>
+          </paper-dialog>
 
           <!-- Application name -->
           <div class="middle middle-container">
-            <div class="app-name">PolyStore</div>
+            <div class="app-name">
+              PolyStore <iron-icon icon="store"
+              style="width: 50px;
+              height: 50px;"></iron-icon>
+            </div>
           </div>
 
           <!-- Application sub title -->
@@ -214,17 +230,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <section data-route="pets" tabindex="-1">
 
               <paper-material elevation="2">
-                <my-subcategory key="Dogs"></my-subcategory>
+                <my-subcategory key="Dogs" carrito="{{carrito}}"></my-subcategory>
               </paper-material>
 
               <paper-material elevation="2">
-                <my-subcategory key="Cats"></my-subcategory>
+                <my-subcategory key="Cats" carrito="{{carrito}}"></my-subcategory>
               </paper-material>
               <paper-material elevation="2">
-                <my-subcategory key="Fish"></my-subcategory>
+                <my-subcategory key="Fish" carrito="{{carrito}}"></my-subcategory>
               </paper-material>
               <paper-material elevation="2">
-                <my-subcategory key="Dinosaur"></my-subcategory>
+                <my-subcategory key="Dinosaur" carrito="{{carrito}}"></my-subcategory>
               </paper-material>
             </section>
 
@@ -242,6 +258,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
   <!-- endbuild-->
+
 </body>
 
 </html>

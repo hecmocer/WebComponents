@@ -1,0 +1,57 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+
+<dom-module id="my-shopping-item">
+    <template>
+        <style include="shared-styles">
+        .fila{
+            margin-top: 5px;
+            border-bottom: solid black 1px;
+        }
+        </style>
+
+        <div class="fila">
+            <img src="{{image}}" style="width: 50px">
+            {{name}} de color {{color}} ------------ cantidad {{amount}} x {{price}}€
+        </div>
+
+    </template>
+
+    <script>
+        (function() {
+            ShoppingItem = Polymer({
+                is: 'my-shopping-item',
+
+                name: {
+                        type: String,
+                        value: "Unknown"
+                    },
+                    image: {
+                        type: String,
+                        value: ""
+                    },
+                    raza: {
+                        type: String,
+                        value: "None"
+                    },
+                    color: {
+                        type: String,
+                        value: "None"
+                    },
+                    notes: {
+                        type: String,
+                        value: "None"
+                    },
+                    price: {
+                        type: Number,
+                        value: -1
+                    },
+                    amount: {
+                        type: Number,
+                        value: 0
+                    }
+            });
+        })();
+    </script>
+
+</dom-module>

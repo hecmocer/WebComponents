@@ -80,6 +80,7 @@
                 },
                 add: function(){
                     this.amount++;
+                    this.fire("addedToCart", this);
                 }
             });
         })();

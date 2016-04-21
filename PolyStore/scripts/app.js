@@ -71,4 +71,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     app.$.paperDrawerPanel.closeDrawer();
   };
 
+  app.addEventListener('dom-change', function(){
+    app.set('carrito', document.querySelector('my-shopping'));
+    app.set('money', 1000);
+  })
+
 })(document);
