@@ -1,6 +1,9 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-styles/typography.html">
 <link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/paper-badge/paper-badge.html">
 
 <dom-module id="my-product">
     <template>
@@ -10,6 +13,16 @@
             }
             .max-width{
                 max-width: 150px;
+            }
+            .margin-left-icon{
+                margin-left: 57px;
+            }
+            .buy-icon{
+                margin-left: -7px;
+                margin-top: 7px;
+            }
+            .card-actions{
+                padding: 10px;
             }
         </style>
 
@@ -21,7 +34,8 @@
         </div>
         <div class="card-actions">
             <span>{{price}}€ </span>
-            <iron-icon icon="shopping-cart"></iron-icon>
+            <paper-icon-button icon="shopping-cart" id="añadir" class="margin-left-icon" on-click="add"></paper-icon-button>
+            <paper-badge for="añadir" class="buy-icon" label="{{amount}}" ></paper-badge>
         </div>
     </paper-card>
 
@@ -58,7 +72,14 @@
                     price: {
                         type: Number,
                         value: -1
+                    },
+                    amount: {
+                        type: Number,
+                        value: 0
                     }
+                },
+                add: function(){
+                    this.amount++;
                 }
             });
         })();
