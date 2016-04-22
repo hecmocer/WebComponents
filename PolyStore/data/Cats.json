@@ -2,7 +2,7 @@
     {
         "name": "Mike",
         "image": "http://placehold.it/150x150",
-        "raza": "1",
+        "type": "1",
         "color": "rojo",
         "notes": "aaaa",
         "price": 50
@@ -10,7 +10,7 @@
     {
         "name": "Nike",
         "image": "http://placehold.it/150x150",
-        "raza": "2",
+        "type": "2",
         "color": "rojo",
         "notes": "aaaa",
         "price": 50
@@ -18,7 +18,7 @@
     {
         "name": "Like",
         "image": "http://placehold.it/150x150",
-        "raza": "3",
+        "type": "3",
         "color": "rojo",
         "notes": "aaaa",
         "price": 50
@@ -26,7 +26,7 @@
     {
         "name": "Ikke",
         "image": "http://placehold.it/150x150",
-        "raza": "4",
+        "type": "4",
         "color": "rojo",
         "notes": "aaaa",
         "price": 50

@@ -1,0 +1,34 @@
+[
+    {
+        "name": "iPhone SE",
+        "image": "http://store.storeimages.cdn-apple.com/4662/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphonese/compare/iphonese-compare-hero-2016_GEO_ES?wid=109&hei=175&fmt=png-alpha&qlt=95&.v=6ukk52",
+        "type": "1",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 489
+    },
+    {
+        "name": "iPhone 6",
+        "image": "http://store.storeimages.cdn-apple.com/4662/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6/compare/iphone6-compare-hero-2015_GEO_ES?wid=105&hei=175&fmt=png-alpha&qlt=95&.v=MS4lZ3",
+        "type": "1",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 639
+    },
+    {
+        "name": "iPhone 6S",
+        "image": "http://store.storeimages.cdn-apple.com/4662/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6s/compare/iphone6s-compare-hero-2015_GEO_ES?wid=134&hei=174&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=86Nk72",
+        "type": "1",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 749
+    },
+    {
+        "name": "iPhone 6S plus",
+        "image": "http://store.storeimages.cdn-apple.com/4662/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6splus/compare/iphone6splus-compare-hero-2015_GEO_ES?wid=149&hei=174&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=JZcld1",
+        "type": "1",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 859
+    }
+]

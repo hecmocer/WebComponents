@@ -1,0 +1,42 @@
+[
+    {
+        "name": "iMac de 21,5'",
+        "image": "http://store.storeimages.cdn-apple.com/4662/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ma/imac/215/imac-215-selection-hero-201510?wid=307&hei=162&fmt=png-alpha&qlt=95&.v=Z97k90",
+        "type": "1",
+        "color": "blanco",
+        "notes": "aaaa",
+        "price": 1202
+    },
+    {
+        "name": "iMac de 21,5' (4k)",
+        "image": "http://store.storeimages.cdn-apple.com/4662/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ma/imac/215/imac-215-retina-selection-hero-201510?wid=307&hei=162&fmt=png-alpha&qlt=95&.v=HAEk53",
+        "type": "2",
+        "color": "blanco",
+        "notes": "aaaa",
+        "price": 1625
+    },
+    {
+        "name": "iMac de 27' 5k",
+        "image": "http://store.storeimages.cdn-apple.com/4662/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ma/imac/27/imac-27-retina-selection-hero-201510?wid=307&hei=162&fmt=png-alpha&qlt=95&.v=Xwqkv1",
+        "type": "3",
+        "color": "blanco",
+        "notes": "aaaa",
+        "price": 2001
+    },
+    {
+        "name": "MacBook Air",
+        "image": "http://store.storeimages.cdn-apple.com/4662/as-images.apple.com/is/image/AppleInc/aos/published/images/m/ac/macbook/air/macbook-air-11-select-hero-201505?wid=236&hei=123&fmt=png-alpha&qlt=95&.v=Ztolr2",
+        "type": "3",
+        "color": "blanco",
+        "notes": "aaaa",
+        "price": 938
+    },
+    {
+        "name": "MacBook Pro",
+        "image": "http://store.storeimages.cdn-apple.com/4662/as-images.apple.com/is/image/AppleInc/aos/published/images/m/ac/macbook/pro/macbook-pro-13-select-hero-201505?wid=228&hei=134&fmt=png-alpha&qlt=95&.v=rcKk32",
+        "type": "3",
+        "color": "blanco",
+        "notes": "aaaa",
+        "price": 1362
+    }
+]

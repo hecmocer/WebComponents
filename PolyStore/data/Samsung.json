@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Galaxy A5",
+        "image": "http://images.samsung.com/is/image/samsung/es_SM-A510FZDAPHE_000000001_Front_gold?$DT-Gallery$",
+        "type": "1",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 429
+    },
+    {
+        "name": "Galaxy J7",
+        "image": "http://images.samsung.com/is/image/samsung/es_SM-J710FZDNPHE_000000001_Front_gold?$DT-Gallery$",
+        "type": "1",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 299
+    },
+    {
+        "name": "Galaxy S7 edge",
+        "image": "http://www.samsung.com/es/consumer/mobile-devices/smartphones/galaxy-s/galaxy-s7/shop/images/product/product-003.png",
+        "type": "1",
+        "color": "rojo",
+        "notes": "aaaa",
+        "price": 299
+    }
+]

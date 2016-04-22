@@ -1,33 +1,33 @@
 [
     {
         "name": "Nemo",
-        "image": "http://placehold.it/150x150",
-        "raza": "1",
-        "color": "rojo",
+        "image": "https://www.nacionpix.com/wp-content/uploads/2016/04/Nemo.png",
+        "type": "payaso",
+        "color": "naranja",
         "notes": "aaaa",
         "price": 50
     },
     {
         "name": "Dory",
-        "image": "http://placehold.it/150x150",
-        "raza": "2",
-        "color": "rojo",
+        "image": "http://vignette2.wikia.nocookie.net/disney/images/e/ef/Dory-FN.png/revision/latest?cb=20131111070226",
+        "type": "2",
+        "color": "azul",
         "notes": "aaaa",
         "price": 50
     },
     {
         "name": "Marlin",
-        "image": "http://placehold.it/150x150",
-        "raza": "3",
-        "color": "rojo",
+        "image": "http://vignette2.wikia.nocookie.net/disney/images/5/57/Marlin-FN.png/revision/latest?cb=20131111070433",
+        "type": "payaso",
+        "color": "naranja",
         "notes": "aaaa",
         "price": 50
     },
     {
         "name": "Burbujas",
-        "image": "http://placehold.it/150x150",
-        "raza": "4",
-        "color": "rojo",
+        "image": "http://vignette4.wikia.nocookie.net/disney/images/6/63/Bubbles.jpg/revision/latest?cb=20100124213007&path-prefix=es",
+        "type": "4",
+        "color": "amarillo",
         "notes": "aaaa",
         "price": 50
     }

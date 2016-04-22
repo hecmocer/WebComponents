@@ -1,0 +1,53 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+
+<dom-module id="my-login">
+    <template>
+        <style include="shared-styles">
+            :host {
+                height: 100%;
+                padding: 0;
+            };
+            .login-elem{
+                margin-top: -20px;
+            }
+            .login-body{
+                padding: 15px;
+            }
+            paper-button.indigo{
+                background-color: var(--paper-indigo-500);
+                color: white;
+                margin-top: 15px;
+            }
+        </style>
+
+        <div class="login-elem">
+            <paper-toolbar>
+                <div>Iniciar sesión</div>
+            </paper-toolbar>
+            <div class="login-body">
+            <paper-input label="Usuario"></paper-input>
+            <paper-input label="Contraseña"></paper-input>
+            <paper-button raised class="indigo">Autenticar</paper-button>
+            </div>
+        </div>
+
+    </template>
+
+    <script>
+        (function() {
+            'use strict';
+
+            Polymer({
+                is: 'my-login',
+                properties: {
+                }
+            });
+        })();
+    </script>
+
+</dom-module>

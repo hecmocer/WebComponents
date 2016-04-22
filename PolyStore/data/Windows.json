@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Dell Vostro 3900 MT",
+        "image": "http://placehold.it/1600x1600",
+        "type": "1",
+        "color": "negro",
+        "notes": "aaaa",
+        "price": 600
+    },
+    {
+        "name": "Acer Aspire XC-705",
+        "image": "http://placehold.it/1600x1600",
+        "type": "2",
+        "color": "negro",
+        "notes": "aaaa",
+        "price": 600
+    },
+    {
+        "name": "Lenovo ThinkCentre E73",
+        "image": "http://placehold.it/1600x1600",
+        "type": "3",
+        "color": "negro",
+        "notes": "aaaa",
+        "price": 600
+    },
+    {
+        "name": "Asus ROG GR6",
+        "image": "http://placehold.it/1600x1600",
+        "type": "4",
+        "color": "negro",
+        "notes": "aaaa",
+        "price": 600
+    },
+    {
+        "name": "MSI Nightblade B85C-217EU",
+        "image": "http://placehold.it/1600x1600",
+        "type": "4",
+        "color": "negro",
+        "notes": "aaaa",
+        "price": 600
+    },
+    {
+        "name": "HP Pavilion 5600-158NS",
+        "image": "http://placehold.it/1600x1600",
+        "type": "4",
+        "color": "negro",
+        "notes": "aaaa",
+        "price": 600
+    }
+]

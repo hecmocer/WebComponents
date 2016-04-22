@@ -87,19 +87,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <span>Home</span>
           </a>
 
-          <a data-route="users" href="{{baseUrl}}users">
-            <iron-icon icon="info"></iron-icon>
-            <span>Users</span>
-          </a>
-
-          <a data-route="contact" href="{{baseUrl}}contact">
-            <iron-icon icon="mail"></iron-icon>
-            <span>Contact</span>
-          </a>
-
           <a data-route="computers" href="{{baseUrl}}computers">
             <iron-icon icon="hardware:desktop-windows"></iron-icon>
-            <span>Dektops</span>
+            <span>Ordenadores</span>
           </a>
 
           <a data-route="phones" href="{{baseUrl}}phones">
@@ -109,7 +99,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <a data-route="pets" href="{{baseUrl}}pets">
             <iron-icon icon="pets"></iron-icon>
-            <span>Pets</span>
+            <span>Mascotas</span>
           </a>
 
         </paper-menu>
@@ -125,7 +115,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <!-- Toolbar icons -->
           <paper-icon-button icon="shop" onclick="javascript:document.querySelector('#storeDialog').toggle()"></paper-icon-button>
-          <paper-icon-button icon="account-circle"></paper-icon-button>
+          <paper-icon-button icon="account-circle" onclick="javascript:document.querySelector('#loginDialog').toggle()"></paper-icon-button>
           <span>Saldo: {{money}}€</span>
 
           <!-- Store cart -->
@@ -134,6 +124,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               id="storeDialog"
               style="width: 75%">
           <my-shopping saldo="{{money}}"></my-shopping>
+          </paper-dialog>
+
+          <!-- Login system -->
+          <paper-dialog entry-animation="scale-up-animation"
+              exit-animation="fade-out-animation"
+              id="loginDialog"
+              style="width: 400px">
+          <my-login></my-login>
           </paper-dialog>
 
           <!-- Application name -->
@@ -157,11 +155,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <section data-route="home" tabindex="-1">
               <paper-material elevation="1">
                 <my-greeting></my-greeting>
-
-                <p class="subhead">You now have:</p>
-                <my-list></my-list>
-
-                <p>Looking for more Web App layouts? Check out our <a href="https://github.com/PolymerElements/app-layout-templates">layouts</a> collection. You can also <a href="http://polymerelements.github.io/app-layout-templates/">preview</a> them live.</p>
               </paper-material>
 
               <paper-material elevation="1">
@@ -188,51 +181,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               </paper-material>
             </section>
 
-            <section data-route="users" tabindex="-1">
-              <paper-material elevation="1">
-                <h1 class="page-title" tabindex="-1">Users</h1>
-                <p>This is the users section</p>
-                <a href$="{{baseUrl}}users/Addy">Addy</a><br>
-                <a href$="{{baseUrl}}users/Rob">Rob</a><br>
-                <a href$="{{baseUrl}}users/Chuck">Chuck</a><br>
-                <a href$="{{baseUrl}}users/Sam">Sam</a>
-              </paper-material>
-            </section>
-
-            <section data-route="user-info" tabindex="-1">
-              <paper-material elevation="-1">
-                <h1 class="page-title" tabindex="-1">User: {{params.name}}</h1>
-                <div>This is {{params.name}}'s section</div>
-              </paper-material>
-            </section>
-
-            <section data-route="contact" tabindex="-1">
-              <paper-material elevation="1">
-                <h1 class="page-title" tabindex="-1">Contact</h1>
-                <p>This is the contact section</p>
-              </paper-material>
-            </section>
-
             <section data-route="computers" tabindex="-1">
-              <paper-material elevation="1">
-                <h1 class="page-title" tabindex="-1">Computers</h1>
-                <p>This is the computers section</p>
+              <paper-material elevation="2">
+                <my-subcategory key="Windows" carrito="{{carrito}}"></my-subcategory>
+              </paper-material>
+              <paper-material elevation="2">
+                <my-subcategory key="Mac" carrito="{{carrito}}"></my-subcategory>
+              </paper-material>
+              <paper-material elevation="2">
+                <my-subcategory key="Sin S.O." carrito="{{carrito}}"></my-subcategory>
               </paper-material>
             </section>
 
             <section data-route="phones" tabindex="-1">
-              <paper-material elevation="1">
-                <h1 class="page-title" tabindex="-1">Phones</h1>
-                <p>This is the phones section</p>
+              <paper-material elevation="2">
+                <my-subcategory key="Samsung" carrito="{{carrito}}"></my-subcategory>
+              </paper-material>
+              <paper-material elevation="2">
+                <my-subcategory key="iPhone" carrito="{{carrito}}"></my-subcategory>
+              </paper-material>
+              <paper-material elevation="2">
+                <my-subcategory key="Otros" carrito="{{carrito}}"></my-subcategory>
               </paper-material>
             </section>
 
             <section data-route="pets" tabindex="-1">
-
               <paper-material elevation="2">
                 <my-subcategory key="Dogs" carrito="{{carrito}}"></my-subcategory>
               </paper-material>
-
               <paper-material elevation="2">
                 <my-subcategory key="Cats" carrito="{{carrito}}"></my-subcategory>
               </paper-material>
